@@ -1,0 +1,32 @@
+export interface Watch {
+  price: number;
+  priceGroup: string;
+  itemBrand: string;
+  itemSeries: string;
+  itemSubSeries: string;
+  itemGender: string;
+  style: string;
+  caseBezel: string;
+  caseBezelDetails: string;
+  caseBack: string;
+  caseDiameter: string;
+  caseMaterial: string;
+  caseShape: string;
+  caseThickness: string;
+  caseCrown: string;
+  caseCrystal: string;
+  bandColor: string;
+  bandDetails: string;
+  bandFinish: string;
+  bandMaterial: string;
+  bandClaspType: string;
+  dialColor: string;
+  dialDescription: string;
+  dialMarkers: string;
+  dialFunctions: string;
+  dialHandColor: string;
+  dialCalendar: string;
+  movement: string;
+  movementDescription: string;
+  movementPowerReserve: string;
+}
