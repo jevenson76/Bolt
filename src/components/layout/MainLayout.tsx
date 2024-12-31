@@ -7,10 +7,11 @@ interface MainLayoutProps {
 }
 
 export function MainLayout({ children }: MainLayoutProps) {
+  console.log('MainLayout rendering');
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col bg-white">
       <Header />
-      <main className="flex-1 bg-gray-50">
+      <main className="flex-grow">
         {children}
       </main>
       <Footer />

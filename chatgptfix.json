@@ -1,0 +1,27 @@
+{
+  "task": "Debug and fix preview issues in Bolt",
+  "context": {
+    "project": "React application using Vite and Supabase",
+    "symptoms": "Preview displays a blank white screen",
+    "environment": "Development mode using `vite`",
+    "known_issues": [
+      "Supabase environment variables may not be properly configured",
+      "Main entry point or routing might be misaligned",
+      "Tailwind CSS styles may not be applied correctly"
+    ],
+    "requirements": [
+      "Identify and resolve the root cause of the blank screen",
+      "Ensure all components render properly in the preview",
+      "Verify integration with Supabase API is functioning"
+    ]
+  },
+  "steps": [
+    "Check the `vite.config.ts` file to ensure the `root` and `base` paths are correctly set for Bolt's environment.",
+    "Verify that all environment variables (`VITE_SUPABASE_URL`, `VITE_SUPABASE_KEY`) are accessible and loaded properly.",
+    "Inspect the entry point (e.g., `src/main.tsx` or `src/index.tsx`) to ensure the React root is being rendered into a valid DOM element.",
+    "Check for any unhandled runtime errors in the browser console or network errors in the DevTools.",
+    "Review Tailwind CSS setup to confirm styles are being built and applied correctly. Rebuild styles if necessary.",
+    "Test for issues in routing (e.g., React Router setup) that may result in the app loading without visible content.",
+    "Provide debugging logs or a summary of fixes to ensure the application displays correctly in preview mode."
+  ]
+}

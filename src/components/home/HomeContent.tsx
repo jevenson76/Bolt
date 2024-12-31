@@ -5,12 +5,13 @@ import { ProductHighlight } from './ProductHighlight';
 import { VideoSection } from './VideoSection/VideoSection';
 
 export function HomeContent() {
+  console.log('HomeContent rendering');
   return (
-    <div className="space-y-20">
+    <>
       <Hero />
       <CategoryGrid />
       <ProductHighlight />
       <VideoSection />
-    </div>
+    </>
   );
 }

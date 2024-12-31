@@ -14,24 +14,27 @@ export function useApiDebug() {
   const [errors, setErrors] = useState<Error[]>([]);
 
   useEffect(() => {
-    const interceptor = supabase.rest.interceptors.response.use(
-      (response) => {
-        setQueries(prev => [...prev, {
-          method: response.config.method?.toUpperCase() || 'UNKNOWN',
-          path: response.config.url || '',
-          duration: Date.now() - response.config.timestamp,
-          timestamp: Date.now()
-        }].slice(-5));
-        return response;
-      },
-      (error) => {
-        setErrors(prev => [...prev, error].slice(-5));
-        return Promise.reject(error);
-      }
-    );
+    const handleRequest = (config: any) => {
+      const timestamp = Date.now();
+      setQueries(prev => [...prev.slice(-4), {
+        method: config.method?.toUpperCase() || 'UNKNOWN',
+        path: config.url || '',
+        duration: 0,
+        timestamp
+      }]);
+    };
+
+    const handleError = (error: Error) => {
+      setErrors(prev => [...prev.slice(-4), error]);
+    };
+
+    // Add listeners for debugging
+    supabase.auth.onAuthStateChange(() => {
+      handleRequest({ method: 'AUTH', url: '/auth/state-change' });
+    });
 
     return () => {
-      supabase.rest.interceptors.response.remove(interceptor);
+      // Cleanup if needed
     };
   }, [supabase]);
 

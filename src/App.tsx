@@ -2,21 +2,24 @@ import React from 'react';
 import { MainLayout } from './components/layout/MainLayout';
 import { HomeContent } from './components/home/HomeContent';
 import { InventoryDashboard } from './components/inventory/InventoryDashboard';
-import { DebugPanel } from './components/debug/DebugPanel';
 import { useAuth } from './hooks/useAuth';
 
 export default function App() {
-  const { user } = useAuth();
-  
+  console.log('App rendering');
+  const { user, loading } = useAuth();
+
+  if (loading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-gray-50">
+        <div className="animate-spin rounded-full h-8 w-8 border-2 border-primary border-t-transparent" />
+      </div>
+    );
+  }
+
   return (
-    <>
-      <DebugPanel />
-      <MainLayout>
-        <div className="min-h-screen bg-gray-50">
-          <HomeContent />
-          {user && <InventoryDashboard />}
-        </div>
-      </MainLayout>
-    </>
+    <MainLayout>
+      <HomeContent />
+      {user && <InventoryDashboard />}
+    </MainLayout>
   );
 }

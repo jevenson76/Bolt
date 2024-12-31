@@ -10,6 +10,8 @@ interface SupabaseProviderProps {
 }
 
 export function SupabaseProvider({ children }: SupabaseProviderProps) {
+  console.log('SupabaseProvider initializing...');
+  
   return (
     <SupabaseContext.Provider value={supabase}>
       {children}
@@ -19,8 +21,8 @@ export function SupabaseProvider({ children }: SupabaseProviderProps) {
 
 export function useSupabase() {
   const context = useContext(SupabaseContext);
-  if (context === undefined) {
-    throw new Error('useSupabase must be used within a SupabaseProvider');
+  if (!context) {
+    throw new Error('useSupabase must be used within SupabaseProvider');
   }
   return context;
 }

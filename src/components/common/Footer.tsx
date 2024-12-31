@@ -18,7 +18,7 @@ export function Footer() {
           </div>
           
           <div>
-            <h3 className="text-lg font-serif mb-6">Client Services</h3>
+            <h3 className="text-lg font-serif mb-6">Contact</h3>
             <div className="space-y-4">
               <div className="flex items-center space-x-3">
                 <Phone className="h-4 w-4" />
@@ -36,33 +36,29 @@ export function Footer() {
           </div>
           
           <div>
-            <h3 className="text-lg font-serif mb-6">The House</h3>
+            <h3 className="text-lg font-serif mb-6">Quick Links</h3>
             <ul className="space-y-3">
-              <li><a href="#" className="hover:text-[#C07732] transition-colors">World of TIMEPIECE</a></li>
-              <li><a href="#" className="hover:text-[#C07732] transition-colors">Sustainability</a></li>
-              <li><a href="#" className="hover:text-[#C07732] transition-colors">Latest News</a></li>
-              <li><a href="#" className="hover:text-[#C07732] transition-colors">Careers</a></li>
+              <li><a href="#" className="hover:text-[#C07732]">Collections</a></li>
+              <li><a href="#" className="hover:text-[#C07732]">New Arrivals</a></li>
+              <li><a href="#" className="hover:text-[#C07732]">Services</a></li>
+              <li><a href="#" className="hover:text-[#C07732]">Contact</a></li>
             </ul>
           </div>
           
           <div>
-            <h3 className="text-lg font-serif mb-6">Stay Connected</h3>
-            <p className="text-sm mb-6">Subscribe to receive updates about new collections and exclusive events.</p>
+            <h3 className="text-lg font-serif mb-6">Newsletter</h3>
+            <p className="text-sm mb-4">Subscribe to receive updates about new collections and exclusive offers.</p>
             <div className="space-y-4">
               <input 
                 type="email" 
                 placeholder="Your email"
-                className="w-full px-4 py-3 bg-white/10 border border-white/20 focus:outline-none focus:border-white"
+                className="w-full px-4 py-2 bg-white/10 border border-white/20 focus:outline-none focus:border-white text-white"
               />
-              <button className="w-full bg-[#A8141F] px-4 py-3 hover:bg-[#C07732] transition-colors">
+              <button className="w-full bg-[#A8141F] px-4 py-2 hover:bg-[#C07732] transition-colors">
                 Subscribe
               </button>
             </div>
           </div>
-        </div>
-        
-        <div className="border-t border-white/20 mt-12 pt-8 text-center text-sm opacity-80">
-          <p>© 2024 TIMEPIECE. All rights reserved.</p>
         </div>
       </div>
     </footer>

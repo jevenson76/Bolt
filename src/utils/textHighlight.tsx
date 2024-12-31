@@ -1,3 +1,5 @@
+import React from 'react';
+
 export function highlightText(text: string, query: string): JSX.Element {
   if (!query.trim()) {
     return <>{text}</>;
